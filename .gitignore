@@ -1,1 +1,3 @@
 node_modules
+# Ignore compiled Java class files
+*.class

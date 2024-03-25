@@ -1,4 +1,4 @@
-function longestConsecutive(nums: number[]): number {
+export default function longestSequence(nums: number[]): number {
     if (!nums.length) return 0
     nums.sort((a, b) => a - b)
     let longestSequence = 1

@@ -18,7 +18,7 @@ function createFiles(functionName) {
 
 const functionName = process.argv[2];
 const codeFunction = `export default function ${functionName} (){}`
-const codeTest = `import { ${functionName} } from "./${functionName}";
+const codeTest = `import ${functionName} from "./${functionName}";
 
 describe('${functionName}', () => {
     it('', () => {

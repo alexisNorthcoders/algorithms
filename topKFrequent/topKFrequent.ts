@@ -12,7 +12,7 @@ export default function topKFrequent(input: number[], k: number) {
             map.set(input[i], 1)
         }
     }
-    const sortedEntries = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
+    const sortedEntries = [...map.entries()].sort((a, b) => b[1] - a[1]);
     const result = sortedEntries.map(entry=>entry[0]).slice(0,k)
     return result
 

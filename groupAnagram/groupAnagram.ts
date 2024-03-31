@@ -1,4 +1,4 @@
-function groupAnagram(stringArray:string[]):string[][]{
+export default function groupAnagram(stringArray:string[]):string[][]{
     const map = new Map()
     for (const word of stringArray){
         const sortedWord = word.split("").sort().join()

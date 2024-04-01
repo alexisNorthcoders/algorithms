@@ -14,7 +14,7 @@ export default function isValidSudoku(sudokuBoard: string[][]): boolean {
             this.gridMap = new Map()
         }
 
-        checkColumn() {
+        checkIsValid() {
             let grid = "00"
             for (let r = 0; r < this.board.length; r++) {
                 const columnSet = new Set()
@@ -54,9 +54,9 @@ export default function isValidSudoku(sudokuBoard: string[][]): boolean {
 
                 }
             }
+            return this.isValid
         }
     }
     const newBoard = new SudokuBoard(sudokuBoard)
-    newBoard.checkColumn()
-    return newBoard.isValid
+    return newBoard.checkIsValid()
 }

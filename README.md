@@ -224,7 +224,7 @@ Given an integer target, return true if target is in matrix or false otherwise.
 
 You must write a solution in O(log(m * n)) time complexity.
 
-## Koko Eating Bananas
+## Koko Eating Bananas (minEatingSpeed)
 Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.
 
 Koko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.
@@ -244,3 +244,25 @@ Example 3:
 
 Input: piles = [30,11,23,4,20], h = 6
 Output: 23
+
+## Valid Parentheses
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+
+Example 1:
+
+Input: s = "()"
+Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false

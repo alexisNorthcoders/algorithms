@@ -7,7 +7,6 @@ export function minEatingSpeed(piles: number[], h: number): number {
             let currentBananaPile = piles[i]
             lapsedTime += Math.ceil(currentBananaPile / k)
             if (i === piles.length - 1 && lapsedTime <= h) {
-                console.log(k)
                 return k
             }
             if (lapsedTime >= h) {

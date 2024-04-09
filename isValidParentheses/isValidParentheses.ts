@@ -7,24 +7,24 @@ export default function isValidParentheses(string: string): boolean {
     "{": "}";
   };
   type Brackets = "(" | "[" | "{";
-  const isOpeningBracket = (char: string): char is Brackets => {
-    return ["(", "[", "{"].includes(char);
-  };
+
   const pairs: Pairs = {
     "(": ")",
     "[": "]",
     "{": "}",
   };
   for (const char of string) {
-    if (stack.length === 0 && isOpeningBracket(char)) stack.push(char);
-    else {
-      const firstOut: Brackets = stack[stack.length - 1] || null;
-      if (pairs[firstOut] === char) stack.pop();
-      else if (isOpeningBracket(char)) {
-        stack.push(char);
+    if (stack.length === 0) {
+      stack.push(char as Brackets);
+    } else {
+      const firstOut: Brackets = stack[stack.length - 1];
+
+      if (pairs[firstOut] === char) {
+        stack.pop();
+      } else if ("([{".includes(char)) {
+        stack.push(char as Brackets);
       }
     }
   }
-  console.log(stack, "before return stack");
   return stack.length === 0;
 }

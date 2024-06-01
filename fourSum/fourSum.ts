@@ -11,13 +11,14 @@ export function fourSum(nums: number[], target: number): number[][] {
           if (nums[i] + nums[j] + nums[k] + nums[l] === target) {
             solution.push([nums[i], nums[j], nums[k], nums[l]]);
             if (solution.length > 1) {
-              const currentSet = new Set([nums[i], nums[j], nums[k], nums[l]]);
-              for (let o = 0; o < solution.length; o++) {
-                const lastSet = new Set(solution[solution.length - 2 - o]);
-                const isSetEqual =
-                  lastSet.size === currentSet.size &&
-                  [...currentSet].every((value) => lastSet.has(value));
-                if (isSetEqual) solution.pop();
+              
+              const currentSolution = [nums[i], nums[j], nums[k], nums[l]]
+              currentSolution.sort((a,b)=> a-b)
+              for (let o = 0; o < solution.length-1; o++) {
+                const lastSolution = solution[solution.length - 2 - o]
+                lastSolution.sort((a,b)=> a-b)
+                const isSameSolution = currentSolution.every((value,index) => value === lastSolution[index]);
+                if (isSameSolution) solution.pop();
               }
             }
           }
@@ -65,4 +66,4 @@ export function fourSumPointers(nums: number[], target: number): number[][] {
 
 const nums = [2, 1, 4, 3, 6, 5];
 const target = 12;
-fourSumPointers(nums, target);
+fourSum(nums, target);

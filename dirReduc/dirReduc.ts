@@ -1,4 +1,4 @@
-export default function dirReduc(arr:string[]) {
+export function dirReduc(arr: string[]) {
   const directions = {
     n: 0,
     s: 0,
@@ -23,18 +23,30 @@ export default function dirReduc(arr:string[]) {
     }
   });
 
-  const vertical = directions.n - directions.s; // go NORTH if positive
-  const horizontal = directions.w - directions.e; // go WEST if positive
+  let vertical = directions.n - directions.s; // go NORTH if positive
+  let horizontal = directions.w - directions.e; // go WEST if positive
   const finalDirections = [];
   if (vertical > 0) {
-    finalDirections.push("NORTH");
+    while (vertical > 0) {
+      vertical--;
+      finalDirections.push("NORTH");
+    }
   } else if (vertical < 0) {
-    finalDirections.push("SOUTH");
+    while (vertical < 0) {
+      vertical++;
+      finalDirections.push("SOUTH");
+    }
   }
   if (horizontal > 0) {
-    finalDirections.push("WEST");
+    while (horizontal > 0) {
+      horizontal--;
+      finalDirections.push("WEST");
+    }
   } else if (horizontal < 0) {
-    finalDirections.push("EAST");
+    while (horizontal < 0) {
+      horizontal++;
+      finalDirections.push("EAST");
+    }
   }
   return finalDirections;
 }
